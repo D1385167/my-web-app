@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>牛排物價追蹤</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🥩 牛排物價追蹤系統</h1>
+            <p>追蹤各類牛排價格變化</p>
+        </header>
+
+        <div class="main-content">
+            <!-- 輸入表單區 -->
+            <section class="input-section">
+                <h2>新增物價記錄</h2>
+                <form id="priceForm">
+                    <div class="form-group">
+                        <label for="date">日期</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">商品名稱</label>
+                        <select id="name" name="name" required>
+                            <option value="">-- 請選擇商品 --</option>
+                            <option value="紐約客牛排">紐約客牛排</option>
+                            <option value="肋眼牛排">肋眼牛排</option>
+                            <option value="菲力牛排">菲力牛排</option>
+                            <option value="丁骨牛排">丁骨牛排</option>
+                            <option value="其他">其他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">價格 (元)</label>
+                        <input type="number" id="price" name="price" min="0" step="10" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">新增記錄</button>
+                </form>
+            </section>
+
+            <!-- 搜尋區 -->
+            <section class="search-section">
+                <h2>查詢物價歷史</h2>
+                <div class="search-controls">
+                    <input type="text" id="searchInput" placeholder="輸入商品名稱進行搜尋..." class="search-box">
+                    <button id="searchBtn" class="btn btn-secondary">搜尋</button>
+                    <button id="resetBtn" class="btn btn-secondary">重置</button>
+                </div>
+            </section>
+
+            <!-- 資料表格區 -->
+            <section class="data-section">
+                <h2>物價紀錄表</h2>
+                <div class="table-responsive">
+                    <table id="pricesTable">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>商品名稱</th>
+                                <th>價格 (元)</th>
+                                <th>記錄時間</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr><td colspan="4" class="loading">載入中...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="data-summary">
+                    <p>總記錄數: <span id="totalCount">0</span></p>
+                </div>
+            </section>
+
+            <!-- 統計區域 -->
+            <section class="stats-section">
+                <h2>價格統計</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>平均價格</h3>
+                        <p id="avgPrice">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>最高價格</h3>
+                        <p id="maxPrice">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>最低價格</h3>
+                        <p id="minPrice">-</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
