@@ -1,21 +1,37 @@
 {
-  "name": "my-web-app",
+  "name": "steak-price-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "牛排物價追蹤系統 - 追蹤各類牛排的價格變化",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "price-tracking",
+    "steak",
+    "sqlite",
+    "express",
+    "web-app",
+    "物價",
+    "牛排"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/D1385167/my-web-app.git"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
   "dependencies": {
+    "express": "^5.2.1",
+    "sqlite3": "^6.0.1",
     "axios": "^1.16.1",
     "cheerio": "^1.2.0",
-    "express": "^5.2.1",
-    "puppeteer": "^24.43.1",
-    "sqlite3": "^6.0.1"
+    "puppeteer": "^24.43.1"
   }
 }
